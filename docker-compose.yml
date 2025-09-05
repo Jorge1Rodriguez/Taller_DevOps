@@ -25,5 +25,10 @@ services:
     volumes:
       - ./backend/app:/app
 
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+
 volumes:
   postgres_data:
