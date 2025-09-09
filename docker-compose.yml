@@ -10,7 +10,7 @@ services:
     ports:
       - "5432:5432"
 
-  backend:
+  backend1:
     build: ./backend
     depends_on:
       - db
@@ -24,6 +24,22 @@ services:
     command: uvicorn main:app --host 0.0.0.0 --port 8000
     volumes:
       - ./backend/app:/app
+
+  backend2:
+    build: ./backend
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: password
+      DB_NAME: movies_db
+    ports:
+      - "8081:8000"
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./backend/app:/app
+
 
   frontend:
     build: ./frontend
