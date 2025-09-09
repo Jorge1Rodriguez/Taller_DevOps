@@ -11,7 +11,7 @@ services:
       - "5432:5432"
 
   backend1:
-    build: ./backend
+    image: jorett7/taller_devops-backend:latest
     depends_on:
       - db
     environment:
@@ -26,7 +26,7 @@ services:
       - ./backend/app:/app
 
   backend2:
-    build: ./backend
+    image: jorett7/taller_devops-backend:latest
     depends_on:
       - db
     environment:
