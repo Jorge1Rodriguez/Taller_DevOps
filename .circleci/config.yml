@@ -20,7 +20,7 @@ jobs:
 
       - run:
           name: Esperar servicios
-          command: sleep 15
+          command: sleep 60
 
       - run:
           name: Ejecutar pruebas dentro del contenedor backend
