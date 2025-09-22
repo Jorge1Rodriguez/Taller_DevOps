@@ -23,10 +23,8 @@ jobs:
           command: sleep 15
 
       - run:
-          name: Ejecutar pruebas API
-          command: |
-            pip install -r backend/app/requirements.txt
-            pytest backend/app/test_main.py
+          name: Ejecutar pruebas dentro del contenedor backend
+          command: docker-compose exec backend1 pytest /app/test_main.py
 
       - run:
           name: Apagar servicios
