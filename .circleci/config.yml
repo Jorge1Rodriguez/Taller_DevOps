@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Logs de backend
-          command: docker logs repo-backend
+          command: docker logs backend
 
       - run:
           name: Ejecutar pruebas dentro del contenedor backend
