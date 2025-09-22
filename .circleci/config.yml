@@ -23,13 +23,13 @@ jobs:
           command: sleep 15
 
       - run:
-          name: Logs de backend
-          command: docker logs backend
+          name: Estado contenedores docker
+          command: docker ps -a
 
 
       - run:
-          name: Estado contenedores docker
-          command: docker ps -a
+          name: Logs de backend
+          command: docker logs backend
 
       - run:
           name: Ejecutar pruebas dentro del contenedor backend
