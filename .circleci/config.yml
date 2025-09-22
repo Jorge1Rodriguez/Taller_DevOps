@@ -20,7 +20,7 @@ jobs:
 
       - run:
           name: Esperar servicios
-          command: sleep 15
+          command: sleep 60
 
       - run:
           name: Estado contenedores docker
@@ -33,7 +33,7 @@ jobs:
 
       - run:
           name: Ejecutar pruebas dentro del contenedor backend
-          command: docker-compose exec repo-backend pytest /app/test_main.py
+          command: docker-compose exec backend pytest /app/test_main.py
 
       - run:
           name: Apagar servicios
