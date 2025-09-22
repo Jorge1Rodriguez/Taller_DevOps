@@ -33,6 +33,7 @@ def get_db():
 
 @app.on_event("startup")
 def startup():
+    database.wait_for_db(database.engine)
     models.Base.metadata.create_all(bind=database.engine)
 
 @app.get("/peliculas", response_model=list[schemas.Movie])
