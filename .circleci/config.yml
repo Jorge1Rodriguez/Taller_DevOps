@@ -1,15 +1,12 @@
 version: 2.1
-executors:
-  docker-executor:
-    docker:
-      - image: cimg/python:3.11
-    working_directory: ~/repo
 
 jobs:
   build:
-    executor: docker-executor
+    machine: true
+    working_directory: ~/repo
     steps:
       - checkout
+
       - run:
           name: Instalar Docker Compose
           command: |
