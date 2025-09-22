@@ -20,7 +20,16 @@ jobs:
 
       - run:
           name: Esperar servicios
-          command: sleep 60
+          command: sleep 15
+
+      - run:
+          name: Logs de backend1
+          command: docker logs backend1
+
+
+      - run:
+          name: Estado contenedores docker
+          command: docker ps -a
 
       - run:
           name: Ejecutar pruebas dentro del contenedor backend
