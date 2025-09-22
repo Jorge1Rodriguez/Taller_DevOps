@@ -23,8 +23,8 @@ jobs:
           command: sleep 15
 
       - run:
-          name: Logs de backend1
-          command: docker logs backend1
+          name: Logs de backend
+          command: docker logs backend
 
 
       - run:
