@@ -29,11 +29,11 @@ jobs:
 
       - run:
           name: Logs de backend
-          command: docker logs backend
+          command: docker logs repo-backend
 
       - run:
           name: Ejecutar pruebas dentro del contenedor backend
-          command: docker-compose exec backend pytest /app/test_main.py
+          command: docker-compose exec repo-backend pytest /app/test_main.py
 
       - run:
           name: Apagar servicios
